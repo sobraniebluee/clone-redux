@@ -2,9 +2,10 @@
   "name": "c-redux",
   "version": "1.0.0",
   "description": "Custom redux",
-  "main": "dist/c-redux.js",
+  "main": "index.js",
   "scripts": {
-    "start": "yarn nodemon test/**",
+    "start": "yarn nodemon src/**",
+    "start-dev": "yarn nodemon test/**.ts",
     "build": "npx webpack build --config ./webpack.config.js --mode production",
     "build-dev": "npx webpack build --config webpack.config.js --mode development"
   },
