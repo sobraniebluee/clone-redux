@@ -6,13 +6,13 @@
 ```js
 import {createStore} from "credux";
 
-# Define initial state
+// Define initial state
 const initialState = {
     num: 0
 }
 
-# Create simple reducer, such as in redux reducers
-# Notice: You must pass to first param initial state
+// Create simple reducer, such as in redux reducers
+// Notice: You must pass to first param initial state
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, action) => {
             return state
     }
 }
-# Custom middleware 
+// Custom middleware 
 
 function customMiddleware({getState, dispatch}) {
     return function (next) {
@@ -38,13 +38,13 @@ function customMiddleware({getState, dispatch}) {
 }
 
 
-# Create store
+// Create store
 const store = createStore({
     reducer: rootReducer,
     middlewares: [customMiddleware]
 })
 
-# Subscribe, .subscribe(listenr) method return unsubscribe function
+// Subscribe, .subscribe(listenr) method return unsubscribe function
 let unsubscribe = store.subscribe(() => {
   console.log(store.getState())
 })
@@ -52,7 +52,7 @@ let unsubscribe = store.subscribe(() => {
 // Dispatch action
 store.dispatch({type: "INCREMENT"})
 
-# Call unsubscribe function
+// Call unsubscribe function
 unsubscribe()
 
 ```
