@@ -1,4 +1,4 @@
-# C-redux
+# Clone-redux
 <p>Redux clone, Pattern observable</p>
 
 
